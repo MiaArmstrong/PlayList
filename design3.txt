@@ -1,0 +1,21 @@
+Mia Armstrong
+Design Write up
+Assignment 3
+
+For this assignment I created a hash table of song class objects. Each song contained a title, the name of the artist, the name of the album, the length in minutes, and the number of times the song was played. The songs were loaded from an external data file and copied into the song objects. The songs were given keys taken from the song title and the keys were hashed into the table using a hash function. The user could enter a key word into the program and the program would retrieve the song or songs with that word in the title. This is the part where I didn't quite get it to work as well as I would have liked. I am not sure what went wrong here but I ran out of time to fix it.  The retrieve function does retrieve songs the first time but will not work correctly the next time. I tried to clean up the code and take care of any memory leaks but I don't think I was successful. 
+
+The hash table worked well for the design of the application. Retrieving songs by key word instead of title was not very efficient for this application. I guess if you wanted to do that you could have a different data structure that would be more efficient. So, for most of the application the data structure works fine until you have to hash multiple word title once per word and exclude meaningless words. Then data structure become inefficient because of all the extra memory being used. 
+
+I think that maybe a hash table of pointers would have worked better. It could be pointing to nodes in a linear linked list or an array. That way you are only adding another pointer per word in the title instead of an entire object. 
+
+The design I used was very efficient. I used an object class to manage the songs and a adt class to manage the hash table. I wrote an complex hash function that allowed the keys to be randomized in a way that prevented collisions as much as possible and distributed the data evenly. 
+
+I had a lot of trouble getting the key words copied out of an array and then using that to retrieve a song object. I don't think that is very efficient in the way I implemented it and also just in general. It was a difficult way to accomplish the solution. 
+
+If I had more time to solve the problem I would probably break the retrieve and load functions into a few smaller functions and test them so that I could figure out what was going on with the arrays and the array of arrays that was being created. I would also work on the test bed to test for various input errors. 
+
+Using the hash function with a table of size 5, there seems to be the most collisions at the second chain while the fifth chain remains empty. I am not sure if it was the nature of the song title I chose or the hash function that caused this. Chain one has 4 songs, chain two has 11 songs, chain three has 4 songs and chain 5 has no songs. I think the keys must be keeping within the middle of the table.
+When I change the table size to 7, chains 3 and 1 become the longest chains. When I change the size of the table to 11, chains 7 and 4 become the longest chains. There does not seem to be a recognizable pattern to the chain lengths.
+ 
+
+
